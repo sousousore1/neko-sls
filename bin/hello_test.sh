@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo 'Invoke hello test'
+cd `dirname $0`
+cd ../test/context1
+python hello_test.py

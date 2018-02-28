@@ -5,6 +5,7 @@
     "license": "MIT",
     "scripts": {
         "hello": "bin/hello.sh",
-        "hello_test": "bin/hello_test.sh"
+        "hello_test": "bin/hello_test.sh",
+        "test_all": "bin/test_all.sh"
     }
 }
