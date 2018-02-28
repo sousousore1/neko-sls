@@ -1,0 +1,10 @@
+{
+    "name": "neko-sls",
+    "version": "1.0.0",
+    "author": "sousousore1 <souichi.saitou@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "hello": "bin/hello.sh",
+        "hello_test": "bin/hello_test.sh"
+    }
+}
