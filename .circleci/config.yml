@@ -1,0 +1,39 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7-jessie-node-browsers
+
+    working_directory: ~/workspace
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - cache-{{ checksum "Pipfile.lock" }}
+          - cache-
+
+      - run:
+          name: Install dependencies
+          command: |
+            pipenv sync --dev
+            cd context1
+            yarn
+
+      - save_cache:
+          paths:
+            - ~/.local
+            - ~/.cache
+            - node_modules
+          key: cache-{{ checksum "Pipfile.lock" }}
+        
+      - run:
+          name: Run tests
+          command: |
+            cd context1
+            yarn test
