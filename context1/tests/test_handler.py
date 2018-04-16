@@ -20,3 +20,6 @@ class TestHandler(unittest.TestCase):
     def test_hello_2(self):
       response = handler.hello('test', None)
       assert response['body'] == '{"input": "test", "message": "Go Serverless v1.0! Your function executed successfully!"}'
+
+    def test_env(self):
+        assert os.environ["TEST_VALUE"] == 'hoge'

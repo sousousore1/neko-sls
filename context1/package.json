@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "python -m unittest discover tests"
+    "test": "pipenv run python -m unittest discover tests"
   }
 }
